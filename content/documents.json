@@ -1,0 +1,250 @@
+[
+  {
+    "id": 1,
+    "title": "Project Proposal Anglican Church Partnership",
+    "file": "documents/01-project-proposal-anglican-church-partnership.md",
+    "format": "MD",
+    "bytes": 31489,
+    "sha256": "a1afbd9bbc630b3647e825ef3c94d866407712e757acc5a3e430ab37b89dd8c1"
+  },
+  {
+    "id": 2,
+    "title": "82 Claytons Road Amity, Minjerribah",
+    "file": "documents/02-82-claytons-road-amity-minjerribah.md",
+    "format": "MD",
+    "bytes": 105197,
+    "sha256": "91cf6b3508d7bab26d9bda99af1e27486d6d6ea189c04eaa091b456e828aacbc"
+  },
+  {
+    "id": 3,
+    "title": "Straddie Sovereign Wealth Fund & “Civilisation of Sand” – Research Brief (-4m)",
+    "file": "documents/03-straddie-sovereign-wealth-fund-civilisation-of-sand-research-brief-4m.md",
+    "format": "MD",
+    "bytes": 97450,
+    "sha256": "f38a733420a8aa8b5bdb94e7801ec8b4ba7eb73c305a4211b8620289cb81f3ff"
+  },
+  {
+    "id": 4,
+    "title": "Indigenous Deals and Sovereign Wealth",
+    "file": "documents/04-indigenous-deals-and-sovereign-wealth.md",
+    "format": "MD",
+    "bytes": 36975,
+    "sha256": "9f47a8e4f8794221719799f21d375fb1e89ceb635ab20c5bfce712d8e1fff6b0"
+  },
+  {
+    "id": 5,
+    "title": "Strategic Plan National Deployment of the Aura Geode Ecosystem",
+    "file": "documents/05-strategic-plan-national-deployment-of-the-aura-geode-ecosystem.md",
+    "format": "MD",
+    "bytes": 64342,
+    "sha256": "200754bc858dfb8a4ba9f3d272c435420475555985af43e8617049b974cfe006"
+  },
+  {
+    "id": 6,
+    "title": "Rapid Deployment Strategies for a 2-ATA HBOT Unit (Aura Geode Integration)",
+    "file": "documents/06-rapid-deployment-strategies-for-a-2-ata-hbot-unit-aura-geode-integration.md",
+    "format": "MD",
+    "bytes": 39286,
+    "sha256": "35e46fc5a26bc5db60e58b66262a6f441fcbbb153ded2c8539e806db3ae925b8"
+  },
+  {
+    "id": 7,
+    "title": "Project Aura Geode The Alchemical Genesis of a Regenerative Civilization",
+    "file": "documents/07-project-aura-geode-the-alchemical-genesis-of-a-regenerative-civilization.md",
+    "format": "MD",
+    "bytes": 73177,
+    "sha256": "983784cd2e5579587e97cca1da04bcbce90ab9fc4cc21271a64937ec768c41dc"
+  },
+  {
+    "id": 8,
+    "title": "AURA GEODE to MACRO",
+    "file": "documents/08-aura-geode-to-macro.md",
+    "format": "MD",
+    "bytes": 101300,
+    "sha256": "582ab951dd7f3f592dfca9ec4b256a271ac33acd466357186591a352f955537b"
+  },
+  {
+    "id": 9,
+    "title": "Local Government Funding Inquiry Submission",
+    "file": "documents/09-local-government-funding-inquiry-submission.md",
+    "format": "MD",
+    "bytes": 36631,
+    "sha256": "ac71b14806220ac4c06b3b7fc8c74a050e9ead1a9fb09dd4054eeee31550ea74"
+  },
+  {
+    "id": 10,
+    "title": "Oceania Health and AI Surge Plan",
+    "file": "documents/10-oceania-health-and-ai-surge-plan.md",
+    "format": "MD",
+    "bytes": 48719,
+    "sha256": "6a40753a486d998f2556efd0a751b0e4f29c88fd60c5330ed36d9113e116dc1c"
+  },
+  {
+    "id": 11,
+    "title": "Health-Tech Cooperative Business Plan",
+    "file": "documents/11-health-tech-cooperative-business-plan.md",
+    "format": "MD",
+    "bytes": 63507,
+    "sha256": "9957a92e818bba55ee6e400241c3b9c81ad8bc89aab8940ed017787409f6fdb7"
+  },
+  {
+    "id": 12,
+    "title": "Aged Care Act Adaptation & Health-Tech Plan",
+    "file": "documents/12-aged-care-act-adaptation-health-tech-plan.md",
+    "format": "MD",
+    "bytes": 50083,
+    "sha256": "4cdbdd06a08b962d2b4d3a6b51663b3b841cc68e9bc3d5f9bd5df64ee8e6e96c"
+  },
+  {
+    "id": 13,
+    "title": "health-challenge-statement",
+    "file": "documents/13-health-challenge-statement.pdf",
+    "format": "PDF",
+    "bytes": 368184,
+    "sha256": "d92148b02d1631b1bcd24d940854950ade3625cfbb2f1c64e3f10b11763857a9"
+  },
+  {
+    "id": 14,
+    "title": "Architectural Blueprint for Oceania",
+    "file": "documents/14-architectural-blueprint-for-oceania.pdf",
+    "format": "PDF",
+    "bytes": 535401,
+    "sha256": "b2b49ff299b5c1ab8ab8fb4dca8f959498c59308fa167745befd9bea76bb0a3d"
+  },
+  {
+    "id": 15,
+    "title": "Queensland Olympic Earn-to-Heal Pilot",
+    "file": "documents/15-queensland-olympic-earn-to-heal-pilot.pdf",
+    "format": "PDF",
+    "bytes": 279093,
+    "sha256": "0e3623cc26e30e58ba107468f18e2d14b6e14094ea0f2523ee3dc55d84af3769"
+  },
+  {
+    "id": 16,
+    "title": "Queenslands Heart-First Ai Surge Plan",
+    "file": "documents/16-queenslands-heart-first-ai-surge-plan.pdf",
+    "format": "PDF",
+    "bytes": 284688,
+    "sha256": "2bb82584c3a47e997df873dc7f74e2f93580df3fea0b51c69f6a207bca34286e"
+  },
+  {
+    "id": 17,
+    "title": "UNGA81 Joyful Responsible Abundance Refined",
+    "file": "documents/17-unga81-joyful-responsible-abundance-refined.pdf",
+    "format": "PDF",
+    "bytes": 109043,
+    "sha256": "2ef53564995743044715b30d216d1998f4a08a3652074e29e4f137555566d7c2"
+  },
+  {
+    "id": 18,
+    "title": "Australian C-Hour Legislative Strategy",
+    "file": "documents/18-australian-c-hour-legislative-strategy.pdf",
+    "format": "PDF",
+    "bytes": 596494,
+    "sha256": "f5bdd4ff959d920b25c4c7897fae00d0d2dfb01d8071da7fc35499e377559e18"
+  },
+  {
+    "id": 19,
+    "title": "Clinical Research Path for Aura of Dementia (1)",
+    "file": "documents/19-clinical-research-path-for-aura-of-dementia-1.pdf",
+    "format": "PDF",
+    "bytes": 320686,
+    "sha256": "51fbb9223116fc1161a6c36d8acc386e0b1e932af280b0edb92ec2b9c30b18a1"
+  },
+  {
+    "id": 20,
+    "title": "Fiji Australia Vuvale Union Submission Luke Nathan Hayes 2026",
+    "file": "documents/20-fiji-australia-vuvale-union-submission-luke-nathan-hayes-2026.docx",
+    "format": "DOCX",
+    "bytes": 52947,
+    "sha256": "f62ae877f90e437583d9ecc2db29f3b11f20253c05b6feda573d7e694c3e8af0"
+  },
+  {
+    "id": 21,
+    "title": "Ocean of Peace Alliance Veitacini Treaty Submission Luke Nathan Hayes 2026",
+    "file": "documents/21-ocean-of-peace-alliance-veitacini-treaty-submission-luke-nathan-hayes-2026.docx",
+    "format": "DOCX",
+    "bytes": 40964,
+    "sha256": "71532df9fdd542df9a77506608746f187f71c82ed01b35ffee3e7f25c500060a"
+  },
+  {
+    "id": 22,
+    "title": "Senate AI and Data Centres Submission Luke Nathan Hayes 2026",
+    "file": "documents/22-senate-ai-and-data-centres-submission-luke-nathan-hayes-2026.docx",
+    "format": "DOCX",
+    "bytes": 39348,
+    "sha256": "1ab01da1abd6cf456c8cf345e09425d3c8cf59e892897ce750e75f815766ed65"
+  },
+  {
+    "id": 23,
+    "title": "A Fair Go for the AI Age Postcode-Level Sovereign Compute as Shared National Infrastructure",
+    "file": "documents/23-a-fair-go-for-the-ai-age-postcode-level-sovereign-compute-as-shared-national-infrastructure.docx",
+    "format": "DOCX",
+    "bytes": 44117,
+    "sha256": "ccc0b69b4044892cbd5a50eed16e1c47656db8db03b6630d62a96836967d2c8d"
+  },
+  {
+    "id": 24,
+    "title": "SETCo 2026 Pitch Plan Revision",
+    "file": "documents/24-setco-2026-pitch-plan-revision.md",
+    "format": "MD",
+    "bytes": 30341,
+    "sha256": "00ffda8789b63a97fa7c8833708983b06678084b2dda90f59b50c23242ea54e1"
+  },
+  {
+    "id": 25,
+    "title": "10 Companies All At Once",
+    "file": "documents/25-10-companies-all-at-once.md",
+    "format": "MD",
+    "bytes": 5020,
+    "sha256": "37ca0bf3933458fa7f39b6cc6d2a1cec6524040e17f774318c18a5a8f4cb5110"
+  },
+  {
+    "id": 26,
+    "title": "Blend Aura to Unity",
+    "file": "documents/26-blend-aura-to-unity.docx",
+    "format": "DOCX",
+    "bytes": 6768631,
+    "sha256": "dc7827060f94616bb805108666fb8f4b5fad94a4194445f1562b65392743ddb0"
+  },
+  {
+    "id": 27,
+    "title": "Open Source Dementia Care System Development",
+    "file": "documents/27-open-source-dementia-care-system-development.md",
+    "format": "MD",
+    "bytes": 75472,
+    "sha256": "6a347492342c9af31e651018c9bfc20ae7b8f7f1154b3c5ac30ff5853ade3564"
+  },
+  {
+    "id": 28,
+    "title": "Clinical Research Path for Aura of Dementia",
+    "file": "documents/28-clinical-research-path-for-aura-of-dementia.md",
+    "format": "MD",
+    "bytes": 74290,
+    "sha256": "41f9c3083a6a8db2121c86627a6217cf57a772a51f868a2585da98a051c74bea"
+  },
+  {
+    "id": 29,
+    "title": "Business Plan Aura of Intelligence for Dementia Care",
+    "file": "documents/29-business-plan-aura-of-intelligence-for-dementia-care.md",
+    "format": "MD",
+    "bytes": 5831,
+    "sha256": "eb65b3ddb0a7a87b4314b36d8c75300508d221476df2c8b6d871944cadff7053"
+  },
+  {
+    "id": 30,
+    "title": "Aura Oi for Dementia Sufferers",
+    "file": "documents/30-aura-oi-for-dementia-sufferers.md",
+    "format": "MD",
+    "bytes": 5864,
+    "sha256": "0cc227ad7e6bc70d72f818fe5c78e744e9a0d4fc67ea96c94c01fcec5eeeddb7"
+  },
+  {
+    "id": 31,
+    "title": "82 Claytons Road Amity, Minjerribah",
+    "file": "documents/31-82-claytons-road-amity-minjerribah.pdf",
+    "format": "PDF",
+    "bytes": 4286582,
+    "sha256": "bf27d9a5b114728c201585bf96fc698c0e907e04d84c49ece2ade2344ba175ef"
+  }
+]

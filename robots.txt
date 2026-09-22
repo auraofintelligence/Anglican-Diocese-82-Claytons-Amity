@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://auraofintelligence.github.io/Anglican-Diocese-82-Claytons-Amity/sitemap.xml

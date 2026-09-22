@@ -1,0 +1,20 @@
+{
+  "name": "A gift for generations",
+  "short_name": "A gift",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#f8f7f0",
+  "theme_color": "#073d3d",
+  "icons": [
+    {
+      "src": "favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
