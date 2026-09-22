@@ -8,7 +8,9 @@ The invitation connects dementia support, aged care and longevity research with 
 
 ## Website
 
-The eleven proposal pages preserve the approved manuscript word for word. Additional pages provide a searchable library of all 31 supplied documents, links to other Minjerribah proposals, and the Strange But True licence. The PDF references page links back to the website.
+The eleven proposal pages preserve the approved manuscript word for word. Additional pages provide a searchable library of all 31 supplied documents, a complete source archive and development history, links to other Minjerribah proposals, and the Strange But True licence. The PDF references page links back to the website.
+
+**[Complete source history](https://auraofintelligence.github.io/Anglican-Diocese-82-Claytons-Amity/source-history.html)** includes all 31 original documents, all 15 distinct websites supplied during the conversation, further sources cited in the proposal, and an account of the decisions that shaped it. The References page also lists every supplied document and website directly. References 1 and 3 link to the property research and UNGA81 PDFs respectively.
 
 The site includes eleven distinct full-width GenAI heroes, contextual future-technology images, vertical tower gardens, a GenAI favicon, original supplied property maps, linked references, previous/next navigation, a floating back-to-top button, and pointer/touch-responsive cards. Reduced-motion preferences are respected.
 
@@ -32,7 +34,7 @@ python scripts/check.py
 python -m http.server 4173
 ```
 
-The checker verifies the eleven proposal sections against the manuscript, original document hashes, local links, reference anchors and image paths. Commit the generated HTML together with the source changes. GitHub Pages serves the `main` branch from the repository root.
+The checker verifies the eleven proposal sections against the manuscript, original document hashes, all 31 document and 15 website links in both complete indexes, coverage of the further cited sources, local links, reference anchors and image paths. `content/websites.json` records the supplied websites and `content/history.md` contains the development account. Commit the generated HTML together with the source changes. GitHub Pages serves the `main` branch from the repository root.
 
 Original artwork was created with the built-in image-generation tool. The final prompt set is recorded in [`content/image-prompts.json`](content/image-prompts.json); web assets are in [`assets/images/`](assets/images/).
 

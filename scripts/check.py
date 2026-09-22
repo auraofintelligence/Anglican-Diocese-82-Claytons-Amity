@@ -64,5 +64,16 @@ for d in docs:
 for d in docs:
     if hashlib.sha256((ROOT/d['file']).read_bytes()).hexdigest()!=d['sha256']:errors.append(f'Changed original: {d["file"]}')
 assert len(docs)==31
+websites=json.loads((ROOT/'content/websites.json').read_text('utf-8'))
+assert len(websites)==15
+for page in ['references.html','source-history.html']:
+    links=pages[page].links
+    for d in docs:
+        if d['file'] not in links:errors.append(f'{page}: missing archive document {d["title"]}')
+    for w in websites:
+        if w['url'] not in links:errors.append(f'{page}: missing supplied website {w["title"]}')
+for label,url in re.findall(r'\[([^\]]+)\]\((https?://[^\s]+?)\)',source[-1]):
+    if url.startswith('https://auraofintelligence.github.io/Anglican-Diocese-82-Claytons-Amity/'):continue
+    if url not in pages['source-history.html'].links:errors.append(f'Source history missing cited source: {label}')
 assert not errors,'\n'.join(errors)
-print(f'PASS: {len(pages)} HTML pages, 11 word-for-word proposal sections, 31 original document hashes, local links, anchors and images.')
+print(f'PASS: {len(pages)} HTML pages, 11 word-for-word proposal sections, 31 original document hashes, 15 supplied websites, complete source indexes, cited sources, local links, anchors and images.')

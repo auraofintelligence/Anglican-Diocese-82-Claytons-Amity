@@ -19,6 +19,7 @@ PAGES=[
 chapters=(ROOT/'content/proposal.md').read_text('utf-8').strip().split('---PAGE---')
 assert len(chapters)==11
 docs=json.loads((ROOT/'content/documents.json').read_text('utf-8'))
+websites=json.loads((ROOT/'content/websites.json').read_text('utf-8'))
 
 def esc(s): return html.escape(s,quote=True)
 def slug(s): return re.sub(r'[^a-z0-9]+','-',s.lower()).strip('-')
@@ -56,11 +57,29 @@ def figure(name,alt):
     return '<figure class="visual-break">'+image(name,alt)+'<figcaption>GenAI concept artwork. '+esc(alt)+'</figcaption></figure>'
 def buttons():
     return '<div class="actions"><a class="button" href="invitation.html">Explore the invitation <span aria-hidden="true">↗</span></a><a class="button secondary" href="documents/82-Claytons-Road-Anglican-Partnership-Proposal.pdf">Read the 11-page proposal <span aria-hidden="true">↓</span></a><a class="button secondary" href="documents.html">All 31 source documents <span aria-hidden="true">↗</span></a></div>'
+def source_archive():
+    content='<section class="source-archive" id="all-documents"><h2>All 31 source documents</h2><p>Original documents supplied for the proposal, including the property research PDF. Select a title to open the original file, or use the <a href="documents.html">searchable document library</a>.</p><ol class="source-list">'
+    for d in docs:
+        content+=f'<li><a href="{d["file"]}">{esc(d["title"])}</a><span class="source-format">{d["format"]} · {d["bytes"]/1024:.0f} KB</span></li>'
+    content+='</ol></section><section class="source-archive" id="supplied-websites"><h2>All 15 supplied websites</h2><p>The project websites shared during development, with repeated links listed once.</p><ul class="source-list">'
+    for w in websites:
+        content+=f'<li><a href="{esc(w["url"])}">{esc(w["title"])} ↗</a></li>'
+    return content+'</ul></section>'
+
+def research_sources():
+    supplied={w['url'] for w in websites}
+    seen=set(); content='<section class="source-archive" id="research-sources"><h2>Further sources cited in the proposal</h2><p>Published research, organisations, official guidance and additional project pages. The <a href="references.html#ref-1">numbered references</a> explain how each supports the invitation.</p><ul class="source-list">'
+    for label,url in re.findall(r'\[([^\]]+)\]\((https?://[^\s]+?)\)',chapters[-1]):
+        if url in seen or url in supplied or url.startswith(BASE):continue
+        seen.add(url)
+        content+=f'<li><a href="{esc(url)}">{esc(label)} ↗</a></li>'
+    return content+'</ul></section>'
 def card(p,i):
     return f'<a class="chapter-card tilt" href="{p[0]}.html">'+image(p[2],p[3])+f'<div><span class="chapter-number">{i+1:02d}</span><h3>{esc(p[1])}</h3><span class="card-arrow" aria-hidden="true">↗</span></div></a>'
 def shell(title,content,key,hero=None,prev=None,nxt=None):
     nav=''.join(f'<a href="{p[0]}.html"'+(' aria-current="page"' if key==p[0] else '')+'>'+esc(p[1])+'</a>' for p in PAGES)
     nav+='<a href="documents.html"'+(' aria-current="page"' if key=='documents' else '')+'>Document library</a><a href="other-proposals.html"'+(' aria-current="page"' if key=='other-proposals' else '')+'>Other Minjerribah proposals</a>'
+    nav+='<a href="source-history.html"'+(' aria-current="page"' if key=='source-history' else '')+'>Source history</a>'
     paging='<nav class="page-turns" aria-label="Previous and next page">'
     if prev:paging+=f'<a class="turn tilt" href="{prev[0]}.html"><span>← Previous page</span><strong>{esc(prev[1])}</strong></a>'
     else:paging+='<a class="turn tilt" href="documents/82-Claytons-Road-Anglican-Partnership-Proposal.pdf"><span>Read offline ↓</span><strong>The complete proposal</strong></a>'
@@ -77,7 +96,7 @@ def shell(title,content,key,hero=None,prev=None,nxt=None):
 <header class="site-header"><a class="brand" href="index.html"><img src="favicon-192.png" alt="" width="48" height="48"><span>A gift for generations<span class="brand-location">82 Claytons Road, Amity</span></span></a><div class="header-actions"><a class="header-pdf" href="documents/82-Claytons-Road-Anglican-Partnership-Proposal.pdf">Read the proposal ↓</a><button class="menu-toggle" aria-expanded="false" aria-controls="site-menu">Explore <span aria-hidden="true">☰</span></button></div></header>
 <nav id="site-menu" class="site-menu" aria-label="All pages" hidden>{nav}</nav>
 <main id="main">{content}</main>{paging}
-<footer class="site-footer"><div><a class="footer-brand" href="index.html">A gift for generations</a><p>Luke Nathan Hayes<br>Strange but True: tech, art and ideas that'll help</p><a href="mailto:auraofintelligence@gmail.com">auraofintelligence@gmail.com</a></div><nav aria-label="Footer"><a href="references.html">References</a><a href="documents.html">All documents</a><a href="other-proposals.html">Other Minjerribah proposals</a><a href="licence.html">Strange But True licence</a><a href="https://github.com/auraofintelligence/Anglican-Diocese-82-Claytons-Amity">GitHub repository</a><a href="https://auraofintelligence.github.io/">Aura of Intelligence</a></nav><p class="footer-note">© 2026 Luke Nathan Hayes. Original concept artwork generated with AI. Supplied property maps retain their original attribution.</p></footer>
+<footer class="site-footer"><div><a class="footer-brand" href="index.html">A gift for generations</a><p>Luke Nathan Hayes<br>Strange but True: tech, art and ideas that'll help</p><a href="mailto:auraofintelligence@gmail.com">auraofintelligence@gmail.com</a></div><nav aria-label="Footer"><a href="references.html">References</a><a href="documents.html">All documents</a><a href="source-history.html">Source history</a><a href="other-proposals.html">Other Minjerribah proposals</a><a href="licence.html">Strange But True licence</a><a href="https://github.com/auraofintelligence/Anglican-Diocese-82-Claytons-Amity">GitHub repository</a><a href="https://auraofintelligence.github.io/">Aura of Intelligence</a></nav><p class="footer-note">© 2026 Luke Nathan Hayes. Original concept artwork generated with AI. Supplied property maps retain their original attribution.</p></footer>
 <a class="to-top" href="#top" aria-label="Back to top">↑</a></body></html>'''
 
 breaks={1:['fund-v2','care'],2:['genesis','learning'],3:['towers','invitation-v2'],4:['genesis','memory'],5:['geode','memory'],6:['memory','geode'],7:['towers','learning'],8:['contribution','towers'],9:['learning','fund-v2']}
@@ -86,6 +105,8 @@ for i,(p,text) in enumerate(zip(PAGES,chapters)):
     text=text.strip(); title=text.splitlines()[0][2:]; body=text.split('\n',1)[1].strip()
     content='<section class="hero">'+image(p[2],p[3],eager=True)+'<span class="hero-caption">GenAI concept artwork</span></section>'
     content+=f'<div class="title-block"><div class="page-count">{i+1:02d} / 11</div><div data-proposal><h1>{inline(title)}</h1></div></div>'
+    if i==10:
+        content+='<nav class="section-links" aria-label="Source collections"><a href="#ref-1">Numbered references</a><a href="#all-documents">All 31 documents</a><a href="#supplied-websites">All 15 websites</a><a href="source-history.html">Development history</a></nav>'
     if i==0:
         content+='<section class="cover-copy"><div data-proposal>'+md(body)+'</div>'+buttons()+'</section>'
         content+='<section class="chapter-index"><h2>Explore the proposal</h2><div class="chapter-grid">'+''.join(card(q,j) for j,q in enumerate(PAGES[1:],1))+'</div></section>'
@@ -103,7 +124,7 @@ for i,(p,text) in enumerate(zip(PAGES,chapters)):
                     content+=f'<figure><a href="assets/images/{name}.webp"><img src="assets/images/{name}.webp" alt="{label} of 82 Claytons Road" loading="lazy" width="1920" height="1200"></a><figcaption>{label}. Google Maps; original attribution retained.</figcaption></figure>'
                 content+='</div><a class="button secondary" href="documents/'+docs[-1]['file'].split('/')[-1]+'">Read the original property document ↓</a></section>'
         if i==10:
-            content+='<section class="library-invitation"><h2>Read the source documents</h2><p>Explore the supplied research, submissions and project designs in one searchable library.</p><a class="button" href="documents.html">Open all 31 documents ↗</a></section>'
+            content+=source_archive()+'<section class="library-invitation"><h2>Follow the development of the proposal</h2><p>See how the source material and the decisions made during development shaped the invitation.</p><a class="button" href="source-history.html">Read the source history ↗</a></section>'
     if i in [0,3,8]:
         content+='<section class="library-invitation"><h2>Other proposals for the Indigenous community</h2><p>Explore related Minjerribah ideas for living, culture, recovery, safety, learning and useful work.</p><a class="button" href="other-proposals.html">Explore the wider Minjerribah proposals ↗</a></section>'
     (ROOT/(p[0]+'.html')).write_text(shell(title,content,p[0],p[2],PAGES[i-1] if i else None,PAGES[i+1] if i<10 else ('documents','Document library')),'utf-8')
@@ -115,7 +136,13 @@ for d in docs:
     if d['format']=='PDF': content+=f'<a class="text-link" href="{d["file"]}">Read PDF ↗</a>'
     content+='</article>'
 content+='</section><p class="no-results" hidden>No matching documents. Try another word.</p>'
-(ROOT/'documents.html').write_text(shell('Document library',content,'documents','library',PAGES[-1],('other-proposals','Other Minjerribah proposals')),'utf-8')
+content+='<section class="library-invitation"><h2>Websites and development history</h2><p>Explore all 15 supplied websites, further research references and the decisions that shaped the proposal.</p><a class="button" href="source-history.html">Explore the complete source history ↗</a></section>'
+(ROOT/'documents.html').write_text(shell('Document library',content,'documents','library',PAGES[-1],('source-history','Source history')),'utf-8')
+history=(ROOT/'content/history.md').read_text('utf-8').strip()
+content='<section class="hero">'+image('library',alts['library'],eager=True)+'<span class="hero-caption">GenAI concept artwork</span></section><div class="title-block"><h1>Source history</h1></div><section class="library-intro"><p>The complete source archive and the development of the invitation: 31 documents, 15 supplied websites and the further sources cited in the proposal.</p></section><nav class="section-links" aria-label="On this page"><a href="#how-the-proposal-developed">Development history</a><a href="#all-documents">All 31 documents</a><a href="#supplied-websites">All 15 websites</a><a href="#research-sources">Further cited sources</a></nav>'
+history=history.replace('# How the proposal developed','## How the proposal developed',1)
+content+='<section class="prose-section"><div class="prose development-history">'+md(history)+'</div></section>'+source_archive()+research_sources()
+(ROOT/'source-history.html').write_text(shell('Source history',content,'source-history','library',('documents','Document library'),('other-proposals','Other Minjerribah proposals')),'utf-8')
 network='https://auraofintelligence.github.io/multi-site-Minjerribah-network/'
 related=[
  ('seven-mile.html','7 Mile living and residency proposal','Living, residencies, visitors, ceremony, gardens, making and retained scrub.','towers'),
@@ -136,5 +163,5 @@ content='<section class="licence-page prose">'+md(licence)+'</section>'
 (ROOT/'404.html').write_text(shell('Page not found','<section class="prose licence-page"><h1>Let’s find your place</h1><p>This page could not be found.</p><a class="button" href="'+BASE+'">Return to the proposal ↗</a></section>','404'),'utf-8')
 (ROOT/'site.webmanifest').write_text(json.dumps({'name':'A gift for generations','short_name':'A gift','start_url':'./','display':'browser','background_color':'#f8f7f0','theme_color':'#073d3d','icons':[{'src':'favicon-192.png','sizes':'192x192','type':'image/png'},{'src':'favicon-512.png','sizes':'512x512','type':'image/png'}]},indent=2),'utf-8')
 (ROOT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+BASE+'sitemap.xml\n','utf-8')
-(ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+BASE+k+'.html</loc></url>' for k in [p[0] for p in PAGES]+['documents','licence','other-proposals'])+'</urlset>','utf-8')
-print('Built 11 proposal pages, document library, licence and 404 page.')
+(ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+BASE+k+'.html</loc></url>' for k in [p[0] for p in PAGES]+['documents','source-history','licence','other-proposals'])+'</urlset>','utf-8')
+print('Built 11 proposal pages, document library, source history, related proposals, licence and 404 page.')
