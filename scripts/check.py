@@ -56,6 +56,11 @@ for key,s in zip(slugs,source):
         first=next((i for i,(a,b) in enumerate(zip(expected,actual)) if a!=b),min(len(expected),len(actual)))
         errors.append(f'{key}: wording mismatch at {first}: {expected[first:first+90]!r} / {actual[first:first+90]!r}')
 docs=json.loads((ROOT/'content/documents.json').read_text('utf-8'))
+reference_links=pages['references.html'].links
+for d in docs:
+    if d['id'] in [31,17,8,26,7,28,27,29,30,18,24,25]:
+        if not any(urlsplit(link).path.endswith('/'+d['file']) for link in reference_links):
+            errors.append(f'Unlinked named reference document: {d["title"]}')
 for d in docs:
     if hashlib.sha256((ROOT/d['file']).read_bytes()).hexdigest()!=d['sha256']:errors.append(f'Changed original: {d["file"]}')
 assert len(docs)==31
