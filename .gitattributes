@@ -1,0 +1,7 @@
+* text=auto eol=lf
+/documents/** -text -diff
+*.pdf -text -diff
+*.docx -text -diff
+*.png -text -diff
+*.webp -text -diff
+*.ico -text -diff
